@@ -1,8 +1,7 @@
 #ifndef TREE_SEARCH_1_H
 #define TREE_SEARCH_1_H
-#include <iostream>
 #include <vector>
-#include <deque>
+#include <stack>
 
 template <typename T>
 struct TNode
@@ -13,7 +12,6 @@ struct TNode
 
 // recursive implementation of DFS
 // returns first found node that is equal to val
-//test_search_1_goal( 20,   4,  tree_depth_first_search_rec<int> ); 
 template <typename T>
 TNode<T> const* tree_depth_first_search_rec(
 	TNode<T> const* pRoot, T const& val
@@ -58,18 +56,29 @@ template <typename T>
 TNode<T> const *        // returns first found node that is equal to val
 tree_depth_first_search_iter( TNode<T> const * pRoot, T const & val )
 {
-    //... openlist;
-    //openlist.push_back( pRoot );
+	std::vector<TNode<T> const*> openlist;
+	openlist.push_back(pRoot); // kick start the process
 
-    //while ( openlist.size() > 0 ) {
-    //    ...
+	while (!openlist.empty())
+	{
+		auto* p = openlist.back();
+		// success
+		if (p->data == val)
+		{
+			return p; 
+		}
 
-    //    // insert children in the order ( 0,1,2,3,... )
-    //    // reverse to make it "left-to-right"
-    //    openlist.insert( openlist.end(), p->children.rbegin(), p->children.rend() );
-    //}
+		openlist.pop_back();
 
-    return nullptr; // failed
+        // insert children in the order ( 0,1,2,3,... )
+        // reverse to make it "left-to-right"
+        openlist.insert(
+			openlist.end(), p->children.rbegin(), p->children.rend()
+		);
+	}
+
+	// failed
+	return nullptr;
 }
 
 // iterative implementation of BFS
