@@ -476,7 +476,7 @@ int main(int argc, char *argv[] ) {
     //    }
     //}
 
-	test6();
+	test8();
 	std::getchar();
 
     return 0;

@@ -1,7 +1,8 @@
 #ifndef TREE_SEARCH_1_H
 #define TREE_SEARCH_1_H
+
 #include <vector>
-#include <stack>
+#include <deque>
 
 template <typename T>
 struct TNode
@@ -52,9 +53,10 @@ TNode<T> const* tree_depth_first_search_rec(
 // use stack (push,top,pop) or vector(push_back,back,pop_back)
 // when inserting children, make sure they will be dicovered in the same
 // order as in TNode's array children
+// returns first found node that is equal to val
 template <typename T>
-TNode<T> const *        // returns first found node that is equal to val
-tree_depth_first_search_iter( TNode<T> const * pRoot, T const & val )
+TNode<T> const*
+tree_depth_first_search_iter(TNode<T> const* pRoot, T const& val)
 {
 	std::vector<TNode<T> const*> openlist;
 	openlist.push_back(pRoot); // kick start the process
@@ -84,10 +86,36 @@ tree_depth_first_search_iter( TNode<T> const * pRoot, T const & val )
 // iterative implementation of BFS
 // simple change from tree_depth_first_search_iter (previous)
 // change container type to deque
+// returns first found node that is equal to val
 template <typename T>
-TNode<T> const *        // returns first found node that is equal to val
-tree_breadth_first_search_iter( TNode<T> const * pRoot, T const & val )
+TNode<T> const*
+tree_breadth_first_search_iter(TNode<T> const* pRoot, T const& val)
 {
+	std::deque<TNode<T> const*> openlist;
+	openlist.push_front(pRoot); // kick start the process
+
+	while (!openlist.empty())
+	{
+		auto* p = openlist.front();
+		// success
+		if (p->data == val)
+		{
+			return p;
+		}
+
+		openlist.pop_front();
+
+        // insert children in the order ( 0,1,2,3,... )
+        //openlist.insert(
+		//	openlist.front(), p->children.begin(), p->children.end()
+		//);
+		for (auto child : p->children)
+		{
+			openlist.push_front(child);
+		}
+	}
+
+	// failed
 	return nullptr;
 }
 
