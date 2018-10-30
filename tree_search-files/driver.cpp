@@ -100,6 +100,7 @@ createRandomTree(
 // node values are uniform between 1 and 100
 // value to search is 555, set by this function
 template< typename SearchFunction >
+//test_search_1_goal( 20,   4,  tree_depth_first_search_rec<int> ); 
 void test_search_1_goal( unsigned tree_size, int branching_factor, SearchFunction funct )
 {
     // basic tests: find using DFS, there is only 1 node with the specific value (555)

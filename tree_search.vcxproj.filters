@@ -14,4 +14,87 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tree_search-files\tree2dot_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tree_search-files\driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tree_search-files\roulette_wheel_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="tree_search-files\handout.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tree_search-files\tree2dot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tree_search-files\roulette_wheel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tree_search-files\tree_search_1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tree_search-files\out13">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out14">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out15">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out16">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out17">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out0">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out1">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out3">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out4">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out5">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out6">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out7">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out8">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out9">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out10">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out11">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tree_search-files\out12">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
