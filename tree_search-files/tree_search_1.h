@@ -107,7 +107,7 @@ tree_breadth_first_search_iter(TNode<T> const* pRoot, T const& val)
 
         // insert children in the order ( 0,1,2,3,... )
         openlist.insert(
-			openlist.begin(), p->children.begin(), p->children.end()
+			openlist.end(), p->children.begin(), p->children.end()
 		);
 	}
 
