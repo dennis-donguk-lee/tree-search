@@ -460,22 +460,24 @@ void test_all() {
 
 #include <cstdio> /* sscanf */
 int main(int argc, char *argv[] ) {
-    if (argc >1) {
-        int test = 0;
-        std::sscanf(argv[1],"%i",&test);
-        try {
-            pTests[test]();
-        } catch( const char* msg) {
-            std::cerr << msg << std::endl;
-        }
-    } else {
-        try {
-            test_all();
-        } catch( const char* msg) {
-            std::cerr << msg << std::endl;
-        }
-    }
+    //if (argc >1) {
+    //    int test = 0;
+    //    std::sscanf(argv[1],"%i",&test);
+    //    try {
+    //        pTests[test]();
+    //    } catch( const char* msg) {
+    //        std::cerr << msg << std::endl;
+    //    }
+    //} else {
+    //    try {
+    //        test_all();
+    //    } catch( const char* msg) {
+    //        std::cerr << msg << std::endl;
+    //    }
+    //}
 
+	test2();
+	std::getchar();
 
     return 0;
 }

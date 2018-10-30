@@ -19,26 +19,34 @@ TNode<T> const* tree_depth_first_search_rec(
 	TNode<T> const* pRoot, T const& val
 )
 {
-	////Depth first seacrh
-	////DFS
-	////===
-	//Node * find( int n , Node * pRoot ) {
-    //// base
-    //if ( not pRoot ) return nullptr; // empty node, only required if there are nullptr in pRoot->children
+    // base
+	// empty node, only required if there are nullptr in pRoot->children
+	if (!pRoot)
+	{
+		return nullptr;
+	}
 
-    //// payload
-    //if ( pRoot->data == n ) return pRoot; // success, first
+    // payload
+    // success, first
+	if (pRoot->data == val)
+	{
+		return pRoot;
+	}
 
-    //// general
-    //// visit children
-    //for ( auto ch : pRoot->children ) {
-    //    auto res = find ( n, ch );
-    //    if ( res ) return res; // early termination/fire escape
-    //}
+    // general
+    // visit children
+	for (auto ch : pRoot->children)
+	{
+		auto res = tree_depth_first_search_rec(ch, val);
 
-    //return nullptr; // failed to find in current subtree
+		// early termination/fire escape
+		if (res)
+		{
+			return res;
+		}
+	}
 
-
+    // failed to find in current subtree
 	return nullptr;
 }
 
